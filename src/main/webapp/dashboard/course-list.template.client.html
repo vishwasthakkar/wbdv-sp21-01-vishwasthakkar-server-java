@@ -5,276 +5,223 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
     <link href="course-list.style.client.css" rel="stylesheet"/>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Course-List</title>
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary navbar-invisible wbdv-sticky-top">
-        <span class="navbar-toggler-icon mr-2"></span>
+        <span class="mr-2 ml-2">
+            <i class="fa fa-bars fa-lg"></i>
+        </span>
         <a class="navbar-brand ml-2" href="#">
             Course Manager
         </a>
         <input class="form-control search-box mr-sm-2"
                type="search"
                placeholder="New Course Title"/>
-        <button type="button" class="btn btn-danger btn-circle btn-xl">
+        <button type="button" class="btn btn-danger btn-circle navbar-add-button">
             <i class="fa fa-plus" aria-hidden="true"></i>
         </button>
     </nav>
 
-    <div class="wbdv-sticky-top initial-skeleton wbdv-padding-5px final-skeleton">
-        <div class="row">
-            <div class="col-1">
-                <i class="fa fa-bars fa-2x"></i>
+    <div class="wbdv-sticky-top initial-skeleton final-skeleton">
+        <div class="row" style="margin-top: 10px">
+            <div class="col-1 ml-4">
+                <i class="fa fa-bars fa-lg"></i>
+            </div>
+            <div class="col-8">
+                <input class="form-control" placeholder="New Course Title"/>
             </div>
             <div class="col">
-                <input class="form-control"/>
+                <button type="button" class="btn btn-danger skeleton-add-button">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </button>
             </div>
-            <button type="button" class="btn btn-danger btn-circle btn-xl">
-                <i class="fa fa-plus" aria-hidden="true"></i>
-            </button>
-            <!--<div class="col-1">-->
-                <!--<i class="fa fa-plus fa-2x"></i>-->
-            <!--</div>-->
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-danger btn-circle-float wbdv-sticky-bottom">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+    </button>
+
+    <div class="row course-table-header">
+        <div class="col-1"></div>
+        <div class="col-2 text-center">
+            Title
+        </div>
+        <div class="col-1 text-center">
+            Owned by
+            <i class="fa fa-sort-up"></i>
+        </div>
+        <div class="col-3 text-center">
+            Last modified by me
+        </div>
+        <div class="col-2">
+            <i class="fa fa-th"></i>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <i class="fa fa-sort"></i>
         </div>
     </div>
 
 
+    <div class="container course-table">
+        <div class="row course">
+            <div class="col-3">
+                <a href="../editor/course-editor.template.client.html">
+                    <i class="fa fa-file"></i>
+                    CS5500 Software Engineering Graduate
+                </a>
+            </div>
+            <div class="col-3 d-none d-sm-block">
+                me
+            </div>
+            <div class="col-5 d-none d-sm-block">
+                6:45 PM
+            </div>
+            <div class="col-1 close">
+                <i class="fa fa-close"></i>
+            </div>
+        </div>
 
-    <button type="button" class="btn btn-danger btn-circle-float btn-xl wbdv-sticky-bottom">
-        <i class="fa fa-plus" aria-hidden="true"></i>
-    </button>
+        <div class="row course">
+            <div class="col-3">
+                <a href="../editor/course-editor.template.client.html">
+                    <i class="fa fa-file"></i>
+                    CS4550 Software Engineering Undergraduate
+                </a>
+            </div>
+            <div class="col-3 d-none d-sm-block">
+                me
+            </div>
+            <div class="col-5 d-none d-sm-block">
+                6:45 PM
+            </div>
+            <div class="col-1 close">
+                <i class="fa fa-close"></i>
+            </div>
+        </div>
 
+        <div class="row course">
+            <div class="col-3">
+                <a href="../editor/course-editor.template.client.html">
+                    <i class="fa fa-file"></i>
+                    CS4500 WebDev Undergraduate
+                </a>
+            </div>
+            <div class="col-3 d-none d-sm-block">
+                me
+            </div>
+            <div class="col-5 d-none d-sm-block">
+                6:45 PM
+            </div>
+            <div class="col-1 close">
+                <i class="fa fa-close"></i>
+            </div>
+        </div>
 
-    <div class="container">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Owned by</th>
-                    <th>Last modified</th>
-                    <th>&nbsp;</th>
-                </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>
-                    <a href="../editor/course-editor.template.client.html">
-                        <i class="fa fa-file"></i>
-                        CS5610
-                    </a>
-                </td>
-                <td>
-                    me
-                </td>
-                <td>
-                    1/21/2021
-                </td>
-                <td>
-                    <i class="fa fa-trash pull-right"></i>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="../editor/course-editor.template.client.html">
-                        <i class="fa fa-file"></i>
-                        CS3200
-                    </a>
-                </td>
-                <td>
-                    me
-                </td>
-                <td>
-                    1/23/2021
-                </td>
-                <td>
-                    <i class="fa fa-trash pull-right"></i>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="../editor/course-editor.template.client.html">
-                        <i class="fa fa-file"></i>
-                        CS4550
-                    </a>
-                </td>
-                <td>
-                    me
-                </td>
-                <td>
-                    1/22/2021
-                </td>
-                <td>
-                    <i class="fa fa-trash pull-right"></i>
-                </td>
-            </tr>
+        <div class="row course">
+            <div class="col-3">
+                <a href="../editor/course-editor.template.client.html">
+                    <i class="fa fa-file"></i>
+                    CS5610 WebDev Graduate
+                </a>
+            </div>
+            <div class="col-3 d-none d-sm-block">
+                me
+            </div>
+            <div class="col-5 d-none d-sm-block">
+                6:45 PM
+            </div>
+            <div class="col-1 close">
+                <i class="fa fa-close"></i>
+            </div>
+        </div>
 
-            /**/
-            <tr>
-                <td>
-                    <a href="../editor/course-editor.template.client.html">
-                        <i class="fa fa-file"></i>
-                        CS5610
-                    </a>
-                </td>
-                <td>
-                    me
-                </td>
-                <td>
-                    1/21/2021
-                </td>
-                <td>
-                    <i class="fa fa-trash pull-right"></i>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="../editor/course-editor.template.client.html">
-                        <i class="fa fa-file"></i>
-                        CS3200
-                    </a>
-                </td>
-                <td>
-                    me
-                </td>
-                <td>
-                    1/23/2021
-                </td>
-                <td>
-                    <i class="fa fa-trash pull-right"></i>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="../editor/course-editor.template.client.html">
-                        <i class="fa fa-file"></i>
-                        CS4550
-                    </a>
-                </td>
-                <td>
-                    me
-                </td>
-                <td>
-                    1/22/2021
-                </td>
-                <td>
-                    <i class="fa fa-trash pull-right"></i>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="../editor/course-editor.template.client.html">
-                        <i class="fa fa-file"></i>
-                        CS5610
-                    </a>
-                </td>
-                <td>
-                    me
-                </td>
-                <td>
-                    1/21/2021
-                </td>
-                <td>
-                    <i class="fa fa-trash pull-right"></i>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="../editor/course-editor.template.client.html">
-                        <i class="fa fa-file"></i>
-                        CS3200
-                    </a>
-                </td>
-                <td>
-                    me
-                </td>
-                <td>
-                    1/23/2021
-                </td>
-                <td>
-                    <i class="fa fa-trash pull-right"></i>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="../editor/course-editor.template.client.html">
-                        <i class="fa fa-file"></i>
-                        CS4550
-                    </a>
-                </td>
-                <td>
-                    me
-                </td>
-                <td>
-                    1/22/2021
-                </td>
-                <td>
-                    <i class="fa fa-trash pull-right"></i>
-                </td>
-            </tr>
-            /**/
+        <div class="row course">
+            <div class="col-3">
+                <a href="../editor/course-editor.template.client.html">
+                    <i class="fa fa-file"></i>
+                    CS5200 Into to Databases
+                </a>
+            </div>
+            <div class="col-3 d-none d-sm-block">
+                me
+            </div>
+            <div class="col-5 d-none d-sm-block">
+                6:44 PM
+            </div>
+            <div class="col-1 close">
+                <i class="fa fa-close"></i>
+            </div>
+        </div>
+
+        <br/>
+        <h5>Yesterday</h5>
+        <br/>
+
+        <div class="row course">
+            <div class="col-3">
+                <a href="../editor/course-editor.template.client.html">
+                    <i class="fa fa-file"></i>
+                    WEBDEV 2 - React
+                    <i class="fa fa-user"></i>
+                </a>
+            </div>
+            <div class="col-3 d-none d-sm-block">
+                me
+            </div>
+            <div class="col-5 d-none d-sm-block">
+                6:44 PM
+            </div>
+            <div class="col-1 close">
+                <i class="fa fa-close"></i>
+            </div>
+        </div>
+
+        <br/>
+        <h5>Previous 7 days</h5>
+        <br/>
+
+        <div class="row course">
+            <div class="col-3">
+                <a href="../editor/course-editor.template.client.html">
+                    <i class="fa fa-file"></i>
+                    WEBDEV Syllabus
+                    <i class="fa fa-user"></i>
+                </a>
+            </div>
+            <div class="col-3 d-none d-sm-block">
+                me
+            </div>
+            <div class="col-5 d-none d-sm-block">
+                6:44 PM
+            </div>
+            <div class="col-1 close">
+                <i class="fa fa-close"></i>
+            </div>
+        </div>
+
+        <div class="row course">
+            <div class="col-3">
+                <a href="../editor/course-editor.template.client.html">
+                    <i class="fa fa-file"></i>
+                    WEBDEV 1 - JavaScript, Java, SQL
+                    <i class="fa fa-user"></i>
+                </a>
+            </div>
+            <div class="col-3 d-none d-sm-block">
+                me
+            </div>
+            <div class="col-5 d-none d-sm-block">
+                6:44 PM
+            </div>
+            <div class="col-1 close">
+                <i class="fa fa-close"></i>
+            </div>
+        </div>
+     </div>
 
 
-            </tbody>
-        </table>
-
-        <h3>Yesterday</h3>
-
-        <table class="table table-striped">
-            <tbody>
-            <tr>
-                <td>
-                    <a href="../editor/course-editor.template.client.html">
-                        <i class="fa fa-file"></i>
-                        CS5610
-                    </a>
-                </td>
-                <td>
-                    me
-                </td>
-                <td>
-                    1/21/2021
-                </td>
-                <td>
-                    <i class="fa fa-trash pull-right"></i>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="../editor/course-editor.template.client.html">
-                        <i class="fa fa-file"></i>
-                        CS3200
-                    </a>
-                </td>
-                <td>
-                    me
-                </td>
-                <td>
-                    1/23/2021
-                </td>
-                <td>
-                    <i class="fa fa-trash pull-right"></i>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <a href="../editor/course-editor.template.client.html">
-                        <i class="fa fa-file"></i>
-                        CS4550
-                    </a>
-                </td>
-                <td>
-                    me
-                </td>
-                <td>
-                    1/22/2021
-                </td>
-                <td>
-                    <i class="fa fa-trash pull-right"></i>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
 </body>
 </html>
