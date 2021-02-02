@@ -16,6 +16,12 @@ html body {
     z-index: 11;
 }
 
+.navbar {
+    position: fixed;
+    top: 0;
+
+}
+
 .course-table-header {
     border-bottom: 1px solid black;
     margin: 0;
@@ -23,10 +29,13 @@ html body {
     position: fixed;
     z-index: 11;
     padding: 12px;
+    background-color: #cfcfcf;
+    top: 60px;
 }
 
 .course-table {
-    margin-top: 50px;
+    margin-top: 120px;
+    margin-bottom: 100px;
     z-index: 2;
 }
 
@@ -54,7 +63,6 @@ html body {
 }
 
 
-
 .navbar-add-button {
     width: 45px;
     height: 45px;
@@ -62,7 +70,7 @@ html body {
     font-size: 19px;
     text-align: center;
     margin-right: 225px;
-    margin-left: 30px;
+    margin-left: 23px;
 }
 
 .skeleton-add-button {
