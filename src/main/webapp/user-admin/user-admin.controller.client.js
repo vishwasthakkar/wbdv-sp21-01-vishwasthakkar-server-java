@@ -3,9 +3,11 @@
     var $tbody;
     var $usernameFld, $passwordFld;
     var $firstNameFld, $lastNameFld, $roleFld;
-    var $createBtn, $updateBtn;
+    var $createBtn, $updateBtn, $deleteBtn, $selectBtn;
+
     var userService = new AdminUserServiceClient();
     var users = [];
+    var selectedUser = null;
 
     jQuery(main);
 
@@ -19,9 +21,7 @@
         $createBtn = jQuery('.wbdv-create');
         $updateBtn = $('.wbdv-update');
 
-        $createBtn.click(function (){
-            createUser()
-        });
+        $createBtn.click(createUser);
         $updateBtn.click(updateUser)
 
         userService.findAllUsers()
@@ -33,25 +33,17 @@
 
 
     function createUser() {
-        var username = $usernameFld.val();
-        var password = $passwordFld.val();
-        var firstName = $firstNameFld.val();
-        var lastName = $lastNameFld.val();
-        var role =  $roleFld.val();
-
         var newUser = {
-            username: username,
-            password: password,
-            firstName: firstName,
-            lastName: lastName,
-            role: role
+            username: $usernameFld.val(),
+            password: $passwordFld.val(),
+            firstName: $firstNameFld.val(),
+            lastName: $lastNameFld.val(),
+            role: $roleFld.val()
         };
         $usernameFld.val('');
         $passwordFld.val('');
         $firstNameFld.val('');
         $lastNameFld.val('');
-        $roleFld.val('');
-
 
         userService.createUser(newUser)
             .then(function (actualUser) {
@@ -67,7 +59,6 @@
                           .parentElement
                           .parentElement)
             .attr('class');
-
         var index = users.findIndex(user => user._id === rowId)
         userService.deleteUser(rowId)
             .then(function (status) {
@@ -76,8 +67,6 @@
             });
     }
 
-
-    var selectedUser = null;
     function selectUser(event) {
         var rowId = $(event.target
                           .parentElement
@@ -104,12 +93,11 @@
                 var index = users.findIndex(user => user._id === selectedUser._id)
                 users[index] = selectedUser;
                 renderUsers(users)
-            })
+            });
         $usernameFld.val('');
         $passwordFld.val('');
         $firstNameFld.val('');
         $lastNameFld.val('');
-        $roleFld.val('');
     }
 
     function renderUsers(users) {
@@ -123,7 +111,7 @@
                     <td class="vdt-row-last-name">${user.lastName}</td>
                     <td class="vdt-row-role">${user.role}</td>
                     <td class="wbdv-actions">
-                        <span class="pull-right">
+                        <span class="float-right">
                           <i class="fa-2x fa fa-times vdt-row-remove"></i>
                           <i class="fa-2x fa fa-pencil vdt-row-edit"></i>
                         </span>
@@ -131,10 +119,12 @@
                 </tr>
             `);
         });
-        jQuery(".vdt-row-remove")
-            .click(deleteUser);
-        jQuery(".vdt-row-edit")
-            .click(selectUser);
+
+        $deleteBtn = $(".vdt-row-remove");
+        $deleteBtn.click(deleteUser);
+
+        $selectBtn = $(".vdt-row-edit");
+        $selectBtn.click(selectUser);
     }
 
 })();
