@@ -144,4 +144,7 @@ public class Widget {
         this.style = style;
         this.value = value;
     }
+
+    public Widget() {
+    }
 }
