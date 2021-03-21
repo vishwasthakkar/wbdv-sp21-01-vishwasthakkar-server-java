@@ -1,7 +1,7 @@
-package com.example.wbdvsp2103jannunziserverjava.controllers;
+package com.example.wbdvsp2101vishwasthakkarserverjava.controllers;
 
-import com.example.wbdvsp2103jannunziserverjava.models.Widget;
-import com.example.wbdvsp2103jannunziserverjava.services.WidgetService;
+import com.example.wbdvsp2101vishwasthakkarserverjava.models.Widget;
+import com.example.wbdvsp2101vishwasthakkarserverjava.services.WidgetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,15 +10,15 @@ import java.util.List;
 @RestController
 @CrossOrigin(origins = "*")
 public class WidgetController {
+
     @Autowired
-    WidgetService service;// = new WidgetService();
+    WidgetService service;
 
     @PostMapping("/api/topics/{tid}/widgets")
     public Widget createWidgetForTopic(
             @PathVariable("tid") String topicId,
             @RequestBody Widget widget) {
-        widget.setTopicId(topicId);
-        return service.createWidgetForTopic(widget);
+        return service.createWidgetForTopic(topicId, widget);
     }
     
     @GetMapping("/api/topics/{tid}/widgets")
@@ -29,7 +29,8 @@ public class WidgetController {
     }
     
     @GetMapping("/api/widgets")
-    public List<Widget> findAllWidgets() {
+    public List<Widget> findAllWidgets()
+    {
         return service.findAllWidgets();
     }
 

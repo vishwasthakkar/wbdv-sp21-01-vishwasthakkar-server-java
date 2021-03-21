@@ -1,6 +1,6 @@
-package com.example.wbdvsp2103jannunziserverjava.services;
+package com.example.wbdvsp2101vishwasthakkarserverjava.services;
 
-import com.example.wbdvsp2103jannunziserverjava.models.Widget;
+import com.example.wbdvsp2101vishwasthakkarserverjava.models.Widget;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 public class WidgetService {
-    private List<Widget> widgets = new ArrayList<Widget>();
+    private List<Widget> widgets = new ArrayList<>();
     {
         Widget w1 = new Widget(123l, "ABC123", "HEADING", 1, "Welcome to Widgets");
         Widget w2 = new Widget(234l, "ABC234", "PARAGRAPH", 1, "This is a paragraph");
@@ -21,7 +21,8 @@ public class WidgetService {
         widgets.add(w4);
     }
     // implement crud operations
-    public Widget createWidgetForTopic(Widget widget) {
+    public Widget createWidgetForTopic(String tid, Widget widget) {
+        widget.setTopicId(tid);
         Long id = (new Date()).getTime();
         widget.setId(id);
         widgets.add(widget);
@@ -31,7 +32,7 @@ public class WidgetService {
         return widgets;
     }
     public List<Widget> findWidgetsForTopic(String topicId) {
-        List<Widget> ws = new ArrayList<Widget>();
+        List<Widget> ws = new ArrayList<>();
         for(Widget w: widgets) {
             if(w.getTopicId().equals(topicId)) {
                 ws.add(w);
