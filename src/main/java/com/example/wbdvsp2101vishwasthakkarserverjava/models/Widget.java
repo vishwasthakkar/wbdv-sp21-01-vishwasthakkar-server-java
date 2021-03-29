@@ -26,6 +26,15 @@ public class Widget {
     private String cssClass;
     private String style;
     private String value;
+    private String listType = "ul";
+
+    public String getListType() {
+        return listType;
+    }
+
+    public void setListType(String listType) {
+        this.listType = listType;
+    }
 
     public String getName() {
         return name;
@@ -139,11 +148,8 @@ public class Widget {
         this.text = text;
     }
 
-    public Widget(String name, Long id, String topicId, String type, Integer widgetOrder,
-                  String text, String url, Integer size, Integer width, Integer height,
-                  String cssClass, String style, String value) {
+    public Widget(String name, String topicId, String type, Integer widgetOrder, String text, String url, Integer size, Integer width, Integer height, String cssClass, String style, String value, String listType) {
         this.name = name;
-        this.id = id;
         this.topicId = topicId;
         this.type = type;
         this.widgetOrder = widgetOrder;
@@ -155,6 +161,7 @@ public class Widget {
         this.cssClass = cssClass;
         this.style = style;
         this.value = value;
+        this.listType = listType;
     }
 
     public Widget() {
