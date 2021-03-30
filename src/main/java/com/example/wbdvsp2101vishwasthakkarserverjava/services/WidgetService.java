@@ -38,6 +38,9 @@ public class WidgetService {
         widget.setType(newWidget.getType());
         widget.setSize(newWidget.getSize());
         widget.setListType(newWidget.getListType());
+        widget.setWidth(newWidget.getWidth());
+        widget.setHeight(newWidget.getHeight());
+        widget.setUrl(newWidget.getUrl());
         repository.save(widget);
         return 1;
     }
